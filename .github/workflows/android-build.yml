@@ -18,8 +18,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      # ලෝකල්ව wrapper එක නැති නිසා Cloud එකටම Gradle 8.5 සෙටප් කරගන්නවා
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.5'
 
       - name: Build Debug APK
         run: gradle assembleDebug
